@@ -1,14 +1,14 @@
 <mat-toolbar>
-  <button matIconButton class="example-icon" aria-label="Example icon-button with menu icon">
+  <button matIconButton>
     <mat-icon>menu</mat-icon>
   </button>
-  <span>My App</span>
-  <span class="example-spacer"></span>
-  <button matIconButton class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+  <a [routerLink]="'home'">My App</a>
+  <span class="spacer"></span>
+  <button matIconButton>
     <mat-icon>favorite</mat-icon>
   </button>
-  <button matIconButton class="example-icon" aria-label="Example icon-button with share icon">
-    <mat-icon>share</mat-icon>
+  <button mat-button (click)="navegarLogin()">
+    Iniciar Sesión
   </button>
 </mat-toolbar>
 
