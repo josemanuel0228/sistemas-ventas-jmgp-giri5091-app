@@ -3,14 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
+import { MaterialModule } from '../material_module';
+import { Header } from './shared/components/header/header';
+import { Footer } from './shared/components/footer/footer';
 
 @NgModule({
   declarations: [
-    App
+    App,
+    Header,
+    Footer
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MaterialModule,
   ],
   providers: [
     provideBrowserGlobalErrorListeners()
