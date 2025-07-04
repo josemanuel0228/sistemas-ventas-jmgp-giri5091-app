@@ -4,15 +4,13 @@ name: CI/CD frontend
 on:
     push:
         branches: [release, develop]
-        paths:
-            - '**'
     pull_request:
         branches: [release, develop]
 
 # Pasos a realizar
 jobs:
-    sistema-ventas-web:
-        runs on: ubuntu_latest
+  sistema-ventas-web:
+        runs-on: ubuntu_latest
         steps:
             - uses: actions/checkout@v4 # clonar el repositorio actual
             - uses: actions/setup-node@v4 # Usar Node
