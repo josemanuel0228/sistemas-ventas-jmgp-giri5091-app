@@ -8,8 +8,7 @@ on:
             - '**'
     pull_request:
         branches: [release, develop]
-        paths:
-            -'**'
+
 # Pasos a realizar
 jobs:
     sistema-ventas-web:
