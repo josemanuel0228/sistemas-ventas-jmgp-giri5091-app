@@ -1,7 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { Subject } from 'rxjs';
+import { Subject, takeUntil } from 'rxjs';
 import { BaseForm } from '../../shared/utils/base form';
+import { AuthService } from '../../shared/service/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-auth',
@@ -18,11 +20,12 @@ export class Auth  implements OnInit, OnDestroy{
     password: ['', [Validators.required, Validators.minLength(3)]]
   });
   constructor(private fb: FormBuilder, 
-              public baseForm: BaseForm) {
-    console.log("init contructor");
+              public baseForm: BaseForm,
+              private authSvc: AuthService,
+              private router: Router
+            ) {
   }
   ngOnInit(): void {
-    console.log("init OnInit");
   }
 
   onSubmit(){
@@ -31,6 +34,11 @@ export class Auth  implements OnInit, OnDestroy{
 
     // si todo el fomulario es correcto obtener el usuario y contraseña para enviarlos
     const form = this.loginForm.value;
+
+    this.authSvc.login(form).pipe(takeUntil(this.destroy$)).subscribe( (data) => {
+      this.router.navigate(['/home']);
+
+    });
 
     console.log(form);
   }

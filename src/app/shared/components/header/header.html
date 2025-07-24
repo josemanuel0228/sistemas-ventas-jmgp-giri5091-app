@@ -1,15 +1,42 @@
 <mat-toolbar>
-  <button matIconButton>
-    <mat-icon>menu</mat-icon>
-  </button>
-  <a [routerLink]="'home'">My App</a>
-  <span class="spacer"></span>
-  <button matIconButton>
-    <mat-icon>favorite</mat-icon>
-  </button>
-  <button mat-button (click)="navegarLogin()">
-    Iniciar Sesión
-  </button>
+    <button mat-icon-button>
+        <mat-icon>menu</mat-icon>
+    </button>
+    <a [routerLink]="'/'">My App</a>
+    <span class="spacer"></span>
+
+    <!-- Contenido cuando NO está en la página de login -->
+    <ng-container *ngIf="!isOnLoginPage()">
+        <!-- Nombre de usuario (si existe sesión) -->
+        <button mat-button *ngIf="data?.nombre">
+            {{ data.nombre }} {{ data.apellidos }}
+        </button>
+        
+        <!-- Ícono de favoritos -->
+        <button mat-icon-button>
+            <mat-icon>favorite</mat-icon>
+        </button>
+        
+        <!-- Botón de LOGOUT (con la lógica de tu TS) -->
+        <button mat-icon-button 
+                (click)="onLogout()" 
+                *ngIf="data"
+                matTooltip="{{ isOnUserPage() ? 'Volver a Home' : 'Cerrar sesión' }}">
+            <mat-icon>logout</mat-icon>
+        </button>
+        
+        <!-- Botón de LOGIN (simplificado, sin navigateConditionally) -->
+        <button mat-button (click)="navegarLogin()" *ngIf="!data">
+            <mat-icon>login</mat-icon>
+            Iniciar Sesión
+        </button>
+    </ng-container>
+
+    <!-- Contenido ESPECÍFICO para página de login (opcional) -->
+    <ng-container *ngIf="isOnLoginPage() && !data">
+        <button mat-button (click)="navegarLogin()">
+             <mat-icon>login</mat-icon>
+            Iniciar Sesión
+        </button>
+    </ng-container>
 </mat-toolbar>
-
-

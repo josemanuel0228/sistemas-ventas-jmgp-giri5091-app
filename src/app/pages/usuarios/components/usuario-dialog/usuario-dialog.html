@@ -1,0 +1,76 @@
+<h1 mat-dialog-title>{{ data?.title }}</h1>
+<br />
+
+<mat-dialog-content>
+  <form [formGroup]="usuarioForm" (submit)="onSave()">
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>cveUsuario</mat-label>
+      <input type="number" formControlName="cveUsuario" matInput />
+      <mat-error>
+        {{ baseForm.getErrorMessage(usuarioForm.get('cveUsuario')) }}
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Nombre</mat-label>
+      <input type="text" formControlName="nombre" matInput />
+      <mat-error>
+        {{ baseForm.getErrorMessage(usuarioForm.get('nombre')) }}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Apellidos</mat-label>
+      <input type="text" formControlName="apellidos" matInput />
+      <mat-error>
+        {{ baseForm.getErrorMessage(usuarioForm.get('apellidos')) }}
+      </mat-error>
+    </mat-form-field>
+
+
+     <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Usuario</mat-label>
+      <input type="text" formControlName="username" matInput />
+      <mat-error>
+        {{ baseForm.getErrorMessage(usuarioForm.get('username')) }}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Contraseña</mat-label>
+      <input type="text" formControlName="password" matInput />
+      <mat-error>
+        {{ baseForm.getErrorMessage(usuarioForm.get('password')) }}
+      </mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Correo</mat-label>
+      <input type="email" formControlName="correo" matInput />
+      <mat-error>
+        {{ baseForm.getErrorMessage(usuarioForm.get('correo')) }}
+      </mat-error>
+    </mat-form-field>
+
+    <div align="center">
+      <button mat-flat-button color="primary" [disabled]="usuarioForm.invalid">
+        <mat-icon>save</mat-icon>
+        {{ titleButton }}
+      </button>
+
+      <button mat-flat-button color="warn" (click)="onClear()">
+        <mat-icon>clear</mat-icon>
+        Limpiar
+      </button>
+    </div>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>
+    <mat-icon>close</mat-icon>
+    Cerrar
+  </button>
+</mat-dialog-actions>
+
+

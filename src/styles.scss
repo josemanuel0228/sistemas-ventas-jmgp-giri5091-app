@@ -1,14 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+/* src/styles.scss */
 @use '@angular/material' as mat;
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-.full-width{
-    width: 100%;
+html, body { 
+  height: 100%;
+  background-color: #cbe3f8; /* Color de fondo personalizado */
 }
-:root {
-    @include mat.toolbar-overrides ((
-        container-background-color: rgb(29, 97, 176),
-    ))
 
+body { 
+  margin: 0; 
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: transparent; /* Permite que se vea el color del html */
+}
+
+.full-width {
+  width: 100%;
+}
+
+:root {
+  @include mat.toolbar-overrides((
+    container-background-color: rgb(7, 174, 235)
+  ));
 }

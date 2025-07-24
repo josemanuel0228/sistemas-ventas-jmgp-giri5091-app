@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing-module';
 import { Home } from './home';
 import { MaterialModule } from '../../../material_module';
+import { MatGridList, MatGridListModule, MatGridTile } from '@angular/material/grid-list';
 
 
 @NgModule({
@@ -12,8 +13,10 @@ import { MaterialModule } from '../../../material_module';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    MaterialModule
-    
-  ]
+    MaterialModule,
+    MatGridList,
+    MatGridTile,
+    MatGridListModule
+]
 })
 export class HomeModule { }

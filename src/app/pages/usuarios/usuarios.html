@@ -1,0 +1,72 @@
+<h1 style="margin: 12px; text-align: center;">Usuarios</h1>  <!-- Centrado añadido -->
+
+<div align="right">
+  <button mat-flat-button color="primary" (click)="onOpenModal()" style="background-color: #8810fc;">  <!-- Color ajustado -->
+    <mat-icon>add</mat-icon>
+    Agregar
+  </button>
+</div>
+
+<div class="table-content mat-elevation-z8" style="margin: 0 auto; width: 95%;">  <!-- Centrado añadido -->
+  <table mat-table [dataSource]="usuarios" style="width: 100%;">  <!-- Ancho completo -->
+
+    <!-- columna cveUsuario -->
+    <ng-container matColumnDef="cveUsuario">
+      <th mat-header-cell *matHeaderCellDef> cveUsuario </th>
+      <td mat-cell *matCellDef="let usuario"> {{ usuario.cveUsuario }} </td>
+    </ng-container>
+
+    <!-- columna nombre -->
+    <ng-container matColumnDef="nombre">
+      <th mat-header-cell *matHeaderCellDef> Nombre </th>
+      <td mat-cell *matCellDef="let usuario"> {{ usuario.nombre }} </td>
+    </ng-container>
+
+    <!-- columna apellidos -->
+    <ng-container matColumnDef="apellidos">
+      <th mat-header-cell *matHeaderCellDef> Apellidos </th>
+      <td mat-cell *matCellDef="let usuario"> {{ usuario.apellidos }} </td>
+    </ng-container>
+
+    <!-- columna correo -->
+    <ng-container matColumnDef="correo">
+      <th mat-header-cell *matHeaderCellDef> Correo </th>
+      <td mat-cell *matCellDef="let usuario"> {{ usuario.correo }} </td>
+    </ng-container>
+
+    <!-- columna username -->
+    <ng-container matColumnDef="username">
+      <th mat-header-cell *matHeaderCellDef> Usuario </th>
+      <td mat-cell *matCellDef="let usuario"> {{ usuario.username }} </td>
+    </ng-container>
+
+    <!-- columna password -->
+    
+
+    <!-- columna fechaRegistro -->
+    <ng-container matColumnDef="fechaRegistro">
+      <th mat-header-cell *matHeaderCellDef> Fecha Registro </th>
+      <td mat-cell *matCellDef="let usuario"> {{ usuario.fechaRegistro | date:'dd-MM-yyyy' }} </td>
+    </ng-container>
+
+    <!-- columna acciones -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>  </th>
+      <td mat-cell *matCellDef="let usuario">
+       <button mat-flat-button color="accent" (click)="onOpenModal(usuario)" style="background-color: #f9c72e;">  <!-- Color ajustado -->
+          <mat-icon>edit</mat-icon>
+          Editar
+       </button>
+
+       <button mat-flat-button color="warn" (click)="onDelete(usuario.cveUsuario)" style="background-color: #fa1e33;">  <!-- Color ajustado -->
+          <mat-icon>delete</mat-icon>
+          Eliminar
+       </button>
+      </td>
+    </ng-container>
+
+    <!-- renderizado de filas -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

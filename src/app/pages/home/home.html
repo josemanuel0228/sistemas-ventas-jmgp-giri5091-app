@@ -1,71 +1,108 @@
-<div id="carouselExampleFade" class="carousel slide carousel-fade">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="https://picsum.photos/id/200/200/300" class="d-block " alt="...">
+<div class="container-fluid p-0">
+  <!-- Carrusel -->
+  <div id="carouselExampleFade" class="carousel slide carousel-fade" style="height: 50vh;">
+    <div class="carousel-inner h-100">
+      <div class="carousel-item active h-100">
+        <img src="https://picsum.photos/id/9/1200/600" class="d-block h-100 w-100 object-fit-cover" alt="...">
+      </div>
+      <div class="carousel-item h-100">
+        <img src="https://picsum.photos/id/48/5000/3333" class="d-block h-100 w-100 object-fit-cover" alt="...">
+      </div>
+      <div class="carousel-item h-100">
+        <img src="https://picsum.photos/id/370/4928/3264" class="d-block h-100 w-100 object-fit-cover" alt="...">
+      </div>
     </div>
-    <div class="carousel-item">
-      <img src="https://picsum.photos/200/300?grayscale" class="d-block " alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="https://picsum.photos/200/300/?blur" class="d-block " alt="...">
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <!-- Sección de productos -->
+  <div class="container py-5">
+    <h2 class="text-center mb-4">Productos populares</h2>
+    
+    <div class="row g-4">
+      <!-- Producto 1 -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 border-0 shadow-sm">
+          <img src="https://picsum.photos/id/96/4752/3168" class="card-img-top" alt="Producto 1">
+          <div class="card-body">
+            <h5 class="card-title">Video Juegos</h5>
+            <p class="text-success">$1,800.00 MXN</p>
+            <small class="text-muted">Envío Gratis</small>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Producto 2 -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 border-0 shadow-sm">
+          <img src="https://picsum.photos/id/201/300/200" class="card-img-top" alt="Producto 2">
+          <div class="card-body">
+            <h5 class="card-title">computadora</h5>
+            <p class="text-success">$12,000.00 MXN</p>
+            <small class="text-muted">Envío Gratis</small>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Producto 3 -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 border-0 shadow-sm">
+          <img src="https://picsum.photos/id/160/3200/2119" class="card-img-top" alt="Producto 3">
+          <div class="card-body">
+            <h5 class="card-title">Celuar</h5>
+            <p class="text-success">$8,000.00 MXN</p>
+            <small class="text-muted">Envío Gratis</small>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Producto 4 -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 border-0 shadow-sm">
+          <img src="https://picsum.photos/id/91/3504/2336" class="card-img-top" alt="Producto 4">
+          <div class="card-body">
+            <h5 class="card-title">Camara</h5>
+            <p class="text-success">$2,300.00 MXN</p>
+            <small class="text-muted">Envío Gratis</small>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-<div class="container mt-3 mb-3">
-  <h2>Productos populares</h2>
-  <hr>
-  <div class="row">
-    <div class="col-lg-3">
-    <mat-card appearance="filled">
-    <img class="rounded" mat-card-image src="https://material.angular.dev/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-      <mat-card-content>
-        <p>Producto 1</p>
-        <h6>$ 250.00 MXN</h6>
-        <p class="text-info">Envio Gratís</p>
-      </mat-card-content>
-    </mat-card>
-    </div>
 
-    <div class="col-lg-3">
-      <mat-card appearance="filled">
-    <img class="rounded" mat-card-image src="https://material.angular.dev/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-      <mat-card-content>
-        <p>Producto 2</p>
-        <h6>$ 250.00 MXN</h6>
-        <p class="text-info">Envio Gratís</p>
-      </mat-card-content>
-    </mat-card>
+  <!-- Sección de Alumnos (ancho completo debajo de productos) -->
+  <div class="container pb-5">
+    <div class="row">
+      <div class="col-12">
+        <div class="card border-0 shadow-sm">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <h5 class="card-title d-flex align-items-center mb-0">
+                  <mat-icon class="me-2">people</mat-icon>
+                  Usuarios
+                </h5>
+                <p class="mb-0 mt-1">Lista de usuarios</p>
+              </div>
+              <button mat-button (click)="onNavigate()">
+                Crear
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div class="col-lg-3">
-      <mat-card appearance="filled">
-    <img class="rounded" mat-card-image src="https://picsum.photos/id/60/200/160" alt="Photo of a Shiba Inu">
-      <mat-card-content>
-        <p>Producto 3</p>
-        <h6>$ 250.00 MXN</h6>
-        <p class="text-info">Envio Gratís</p>
-      </mat-card-content>
-    </mat-card>
-    </div>
-
-    <div class="col-lg-3">
-    <mat-card appearance="filled">
-    <img class="rounded" mat-card-image src="https://material.angular.dev/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-      <mat-card-content>
-        <p>Producto 1</p>
-        <h6>$ 250.00 MXN</h6>
-        <p class="text-info">Envio Gratís</p>
-      </mat-card-content>
-    </mat-card>
-    </div>
-
   </div>
 </div>
+
+  <!-- Puedes agregar más tiles según necesites -->
+  
+
+  <!-- Pie de página -->
