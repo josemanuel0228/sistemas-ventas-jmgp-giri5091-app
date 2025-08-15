@@ -3,7 +3,7 @@
 
 html, body { 
   height: 100%;
-  background-color: #cbe3f8; /* Color de fondo personalizado */
+  background-color: #f1f7fc; /* Color de fondo personalizado */
 }
 
 body { 
@@ -18,6 +18,6 @@ body {
 
 :root {
   @include mat.toolbar-overrides((
-    container-background-color: rgb(7, 174, 235)
+    container-background-color: rgb(145, 7, 251)
   ));
 }
